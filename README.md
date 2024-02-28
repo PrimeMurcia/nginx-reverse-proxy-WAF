@@ -1,6 +1,6 @@
 # Secure ModSecurity Installation with Nginx on Debian/Ubuntu and Nginx Reserve Proxy
 
-## Step 1: Install Nginx on Debian/Ubuntu
+## Step 1: Install Nginx on Debian/Ubuntu 22
 
 ```bash
 sudo apt install nginx
