@@ -36,11 +36,19 @@ cd /usr/local/src/nginx/
 sudo apt install dpkg-dev
 sudo apt source nginx
 ```
-
-Ensure source code version matches Nginx binary version:
+Check out the source code files
 
 ```bash
-sudo nginx -v
+ls
+```
+
+Sample files
+
+```bash
+nginx-1.18.0
+nginx_1.18.0-6ubuntu14.4.debian.tar.xz
+nginx_1.18.0-6ubuntu14.4.dsc
+nginx_1.18.0.orig.tar.gz
 ```
 
 ## Step 3: Install libmodsecurity3
