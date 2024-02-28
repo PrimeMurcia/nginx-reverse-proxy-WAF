@@ -72,7 +72,7 @@ sudo apt install uuid-dev
 sudo ./configure --with-compat --with-openssl=/usr/include/openssl/ --add-dynamic-module=/usr/local/src/ModSecurity-nginx
 sudo make modules
 sudo cp objs/ngx_http_modsecurity_module.so /usr/share/nginx/modules/
-
+```
 
 ## Step 5: Load the ModSecurity v3 Nginx Connector Module
 
