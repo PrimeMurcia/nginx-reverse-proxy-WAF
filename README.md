@@ -141,3 +141,31 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
+## Step 7: Step 7: Configure Nginx as a Reverse Proxy
+
+Edit the Nginx configuration file to set up a reverse proxy:
+
+
+```bash
+sudo nano /etc/nginx/sites-available/yourdomain
+```
+
+```bash
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        server_name yourdomain.com;
+
+        location / {
+                proxy_pass http://ip address:port number;
+                proxy_set_header Host $host;
+        }
+}
+```
+
+```bash
+sudo unlink /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/yourdomain
+sudo systemctl restart nginx
+```
