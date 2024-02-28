@@ -68,6 +68,8 @@ make -j8
 sudo make install
 ```
 
+Note: make -j8 base on your cpu count 
+
 ## Step 4: Download and Compile ModSecurity v3 Nginx Connector Source Code
 
 Clone the ModSecurity v3 Nginx Connector Git repository:
