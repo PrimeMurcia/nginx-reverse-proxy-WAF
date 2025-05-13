@@ -22,7 +22,9 @@ bash
 Copy
 Edit
 sudo apt install gcc make build-essential autoconf automake libtool libcurl4-openssl-dev liblua5.3-dev libfuzzy-dev ssdeep gettext pkg-config libgeoip-dev libyajl-dev doxygen libpcre++-dev libpcre2-16-0 libpcre2-dev libpcre2-posix3 zlib1g zlib1g-dev -y
-2. Install ModSecurity
+```
+
+## 1. Install ModSecurity
 Clone the ModSecurity repository and install it from source.
 
 bash
