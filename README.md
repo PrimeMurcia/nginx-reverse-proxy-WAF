@@ -34,57 +34,50 @@ cd ModSecurity
 
 ## Initialize and update the submodules:
 
-bash
-Copy
-Edit
+```bash
 sudo git submodule init
 sudo git submodule update
-Build and install ModSecurity:
+```
+## Build and install ModSecurity:
 
-bash
-Copy
-Edit
+```bash
 sudo ./build.sh
 sudo ./configure
 sudo make
 sudo make install
-3. Install ModSecurity-Nginx Connector
+```
+## 3. Install ModSecurity-Nginx Connector
 Download the ModSecurity-Nginx connector:
 
-bash
-Copy
-Edit
+```bash
 cd /opt && sudo git clone https://github.com/owasp-modsecurity/ModSecurity-nginx.git
-4. Install Nginx
+```
+## 4. Install Nginx
 Add the Nginx Repository
 Add the Nginx repository from Ondrej PPA to install the latest stable version:
 
-bash
-Copy
-Edit
+```bash
 sudo add-apt-repository ppa:ondrej/nginx -y
 sudo apt update
-Install Nginx
+```
+## Install Nginx
 Now, install Nginx:
 
-bash
-Copy
-Edit
+```bash
 sudo apt install nginx -y
-Enable Nginx to start on boot:
+```
 
-bash
-Copy
-Edit
+## Enable Nginx to start on boot:
+
+```bash
 sudo systemctl enable nginx
 sudo systemctl status nginx
-Check the installed Nginx version:
-
-bash
-Copy
-Edit
+```
+## Check the installed Nginx version:
+```bash
 sudo nginx -v
-5. Download Nginx Source Code
+```
+## 5. Download Nginx Source Code
 Download the Nginx source code that matches your installed version.
 
 bash
