@@ -199,15 +199,13 @@ sudo tail -f /var/log/modsec_audit.log
 sudo tail -f /var/log/nginx/error.log
 ```
 
-Conclusion
+## Conclusion
 Congratulations! You have successfully installed Nginx with ModSecurity 3 and OWASP CRS on your Ubuntu server. Your server is now equipped with a robust web application firewall (WAF) to help protect against common attacks and vulnerabilities.
 
-Customization
+## Customization
 Nginx version: Replace the version in the wget command with the appropriate Nginx version you want to install.
 
-Configuration adjustments: Modify the Nginx and ModSecurity configurations to suit your specific requirements (such as different server blocks, rules, or custom security settings).
-
-Feel free to adjust the instructions according to your needs.
+## Configuration adjustments: Modify the Nginx and ModSecurity configurations to suit your specific requirements (such as different server blocks, rules, or custom security settings).
 
 
 ### Notes:
