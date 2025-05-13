@@ -16,23 +16,23 @@ Before beginning the installation, update the system and install necessary libra
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-Install libraries required for compiling ModSecurity:
+```
+## Install libraries required for compiling ModSecurity:
 
-bash
-Copy
-Edit
+```bash
 sudo apt install gcc make build-essential autoconf automake libtool libcurl4-openssl-dev liblua5.3-dev libfuzzy-dev ssdeep gettext pkg-config libgeoip-dev libyajl-dev doxygen libpcre++-dev libpcre2-16-0 libpcre2-dev libpcre2-posix3 zlib1g zlib1g-dev -y
 ```
 
 ## 1. Install ModSecurity
 Clone the ModSecurity repository and install it from source.
 
-bash
-Copy
-Edit
+```bash
+
 cd /opt && sudo git clone https://github.com/owasp-modsecurity/ModSecurity.git
 cd ModSecurity
-Initialize and update the submodules:
+```
+
+## Initialize and update the submodules:
 
 bash
 Copy
