@@ -80,72 +80,62 @@ sudo nginx -v
 ## 5. Download Nginx Source Code
 Download the Nginx source code that matches your installed version.
 
-bash
-Copy
-Edit
+```bash
 cd /opt && sudo wget https://nginx.org/download/nginx-X.Y.Z.tar.gz  # Replace X.Y.Z with your version
 sudo tar -xzvf nginx-X.Y.Z.tar.gz
 cd nginx-X.Y.Z
-6. Build Nginx with ModSecurity
+```
+## 6. Build Nginx with ModSecurity
 Configure and build Nginx with the ModSecurity module:
-
-bash
-Copy
-Edit
+```bash
 sudo ./configure --with-compat --add-dynamic-module=/opt/ModSecurity-nginx
 sudo make
 sudo make modules
-7. Copy the Necessary Files
+```
+
+## 7. Copy the Necessary Files
 Copy the Nginx ModSecurity module and configuration files to the appropriate directories:
 
-bash
-Copy
-Edit
+```bash
 sudo cp objs/ngx_http_modsecurity_module.so /etc/nginx/modules-enabled/
 sudo cp /opt/ModSecurity/modsecurity.conf-recommended /etc/nginx/modsecurity.conf
 sudo cp /opt/ModSecurity/unicode.mapping /etc/nginx/unicode.mapping
-8. Enable ModSecurity in Nginx Configuration
+```
+## 8. Enable ModSecurity in Nginx Configuration
 Edit Nginx Configuration
 Edit the nginx.conf file to load the ModSecurity module:
 
-bash
-Copy
-Edit
+```bash
 sudo nano /etc/nginx/nginx.conf
+```
 Add the following line in the http block:
-
-nginx
-Copy
-Edit
+```nginx
 load_module /etc/nginx/modules-enabled/ngx_http_modsecurity_module.so;
-Enable ModSecurity for Server Block
+```
+## Enable ModSecurity for Server Block
 Edit your site’s configuration (usually in sites-enabled/default):
 
-bash
-Copy
-Edit
+```bash
 sudo nano /etc/nginx/sites-enabled/default
-Add these lines inside the server block:
+```
+## Add these lines inside the server block:
 
-nginx
-Copy
-Edit
+```nginx
 modsecurity on;
 modsecurity_rules_file /etc/nginx/modsecurity.conf;
-Modify ModSecurity Configuration
+```
+## Modify ModSecurity Configuration
 Edit ModSecurity’s configuration to enable the rules engine:
 
-bash
-Copy
-Edit
+```bash
 sudo nano /etc/nginx/modsecurity.conf
-Change SecRuleEngine to On:
+```
+## Change SecRuleEngine to On:
 
-nginx
-Copy
-Edit
+```nginx
 SecRuleEngine On
-9. Test and Restart Nginx
+```
+## 9. Test and Restart Nginx
 Test the Nginx configuration for syntax errors:
 
 bash
