@@ -205,7 +205,8 @@ Congratulations! You have successfully installed Nginx with ModSecurity 3 and OW
 ## Customization
 Nginx version: Replace the version in the wget command with the appropriate Nginx version you want to install.
 
-## Configuration adjustments: Modify the Nginx and ModSecurity configurations to suit your specific requirements (such as different server blocks, rules, or custom security settings).
+## Configuration adjustments:
+Modify the Nginx and ModSecurity configurations to suit your specific requirements (such as different server blocks, rules, or custom security settings).
 
 
 ### Notes:
