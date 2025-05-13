@@ -138,75 +138,67 @@ SecRuleEngine On
 ## 9. Test and Restart Nginx
 Test the Nginx configuration for syntax errors:
 
-bash
-Copy
-Edit
+```bash
 sudo nginx -t
-If everything is okay, restart Nginx:
+```
+## If everything is okay, restart Nginx:
 
-bash
-Copy
-Edit
+```bash
 sudo systemctl restart nginx
-10. Update ModSecurity Rules with OWASP CRS
+```
+
+## 10. Update ModSecurity Rules with OWASP CRS
 Download OWASP CRS
 Clone the OWASP Core Rule Set (CRS) repository to your Nginx configuration directory:
 
-bash
-Copy
-Edit
+```bash
 sudo git clone https://github.com/coreruleset/coreruleset.git /etc/nginx/owasp-crs
-Copy the Default Configuration
+```
+## Copy the Default Configuration
 Copy the default CRS setup file:
 
-bash
-Copy
-Edit
+```bash
 sudo cp /etc/nginx/owasp-crs/crs-setup.conf{.example,}
-Update ModSecurity Configuration to Load CRS
+```
+## Update ModSecurity Configuration to Load CRS
 Edit the ModSecurity configuration to include the CRS rules:
 
-bash
-Copy
-Edit
+```bash
 sudo nano /etc/nginx/modsecurity.conf
-Add the following lines at the end of the file:
+```
+## Add the following lines at the end of the file:
 
-nginx
-Copy
-Edit
+```nginx
 Include owasp-crs/crs-setup.conf
 Include owasp-crs/rules/*.conf
-11. Final Nginx Test and Restart
+```
+## 11. Final Nginx Test and Restart
 Test the Nginx configuration again:
 
-bash
-Copy
-Edit
+```bash
 sudo nginx -t
-Restart the Nginx service to apply the changes:
+```
+## Restart the Nginx service to apply the changes:
 
-bash
-Copy
-Edit
+```bash
 sudo service nginx restart
-12. Test ModSecurity + Nginx
+```
+## 12. Test ModSecurity + Nginx
 To test if ModSecurity and OWASP CRS are working correctly, try accessing your server with a malicious URL (for example, a PHP shell):
 
-bash
-Copy
-Edit
+```bash
 https://your_server_ip/as.php?s=/bin/bash
+```
 If everything is working correctly, you should see a 403 Forbidden response indicating that the request was blocked by ModSecurity.
 
-View Logs
+## View Logs
 You can view logs for more details on blocked requests:
 
-bash
-Copy
-Edit
+```bash
 sudo tail -f /var/log/modsec_audit.log
 sudo tail -f /var/log/nginx/error.log
+```
+
 Conclusion
 Congratulations! You have successfully installed Nginx with ModSecurity 3 and OWASP CRS on your Ubuntu server. Your server is now equipped with a robust web application firewall (WAF) to help protect against common attacks and vulnerabilities.
 
@@ -217,16 +209,8 @@ Configuration adjustments: Modify the Nginx and ModSecurity configurations to su
 
 Feel free to adjust the instructions according to your needs.
 
-License
-This project is licensed under the MIT License.
-
-vbnet
-Copy
-Edit
 
 ### Notes:
 1. The version of Nginx is marked as `X.Y.Z` for the user to replace with the appropriate version they want to download.
-2. The formatting is typical for GitHub Markdown files, with clear headings, sections, and commands.
-3. The conclusion and customization sections allow users to understand how they can adapt the process for their specific use cases.
 
-You can copy and paste this content directly into a `README.md` file on GitHub.
+
