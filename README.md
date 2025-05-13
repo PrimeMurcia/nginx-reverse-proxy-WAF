@@ -4,7 +4,7 @@ This guide explains how to install **Nginx** with **ModSecurity 3** and the **OW
 
 ## Prerequisites
 
-- A **VPS** or server running **Ubuntu 20.04** or later.
+- A **VPS** or server running **Ubuntu 20.04** or latest.
 - **Root** or **sudo** access to the server.
 - Basic knowledge of the command line.
 
